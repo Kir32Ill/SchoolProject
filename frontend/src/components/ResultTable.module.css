@@ -1,0 +1,61 @@
+.resultTable {
+  width: 95.83vw; 
+  margin: 0 auto;
+  margin-top: 1vw;
+}
+
+.resultTable.modalVersion {
+  padding: 1rem 0;
+}
+
+.twoColumnLayout {
+  display: flex;
+  gap: 1.04vw; 
+  height: fit-content;
+  
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.78vw; 
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 1.25vw; 
+  box-shadow: 0 0.1vw 0.26vw rgba(0, 0, 0, 0.05); 
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 46.875vw;
+  height: 6.12vw; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modalVersion .card {
+  background: #fff;
+  box-shadow: 0 0.1vw 0.52vw rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-0.16vw);
+  box-shadow: 0 0.26vw 0.78vw rgba(0, 0, 0, 0.1);
+}
+
+.value {
+  font-size: 2.083vw;
+  font-weight: bold;
+  color: #201B10;
+  margin-bottom: 0.26vw; 
+}
+
+.label {
+  font-size: 1.04vw;
+  color: #201B10;
+  line-height: 1.4;
+}
+

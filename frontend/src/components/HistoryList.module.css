@@ -1,0 +1,138 @@
+.historyContainer {
+  max-width: 96vw;
+  margin: auto;
+  padding: 2.08vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin-top: 2.08vw;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 0.52vw;
+  padding: 1.04vw 1.56vw;
+  margin-bottom: 1.04vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item.success {
+  background-color: #eacdff;
+  border-left: 0.52vw solid #201b10;
+}
+
+.item.error {
+  background-color: #fff0f0;
+  border-left: 0.52vw solid #ff5f00;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #201b10;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  margin-right: 1vw;
+}
+
+.date {
+  font-size: 1.2vw;
+  color: #787878;
+  margin-right: 1vw;
+  flex-shrink: 0;
+  min-width: 10vw;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.52vw;
+  flex-grow: 1;
+  min-width: 20vw;
+}
+
+.statusText {
+  font-size: 1.56vw;
+  font-weight: 500;
+  color: #201b10;
+}
+
+.statusText.dimmed {
+  color: #999;
+  font-weight: 400;
+}
+
+.deleteButton {
+  width: 2.6vw;
+  height: 2.6vw;
+  border: none;
+  background-color: transparent;
+  font-size: 2.6vw;
+  color: #787878;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.actionsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.08vw;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 1.04vw;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+  padding-bottom: 0.52vw;
+}
+
+.generateMoreButton,
+.clearAllButton {
+  font-size: 1.82vw;
+  border: none;
+  border-radius: 1.3vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 4.2vw;
+  display: flex;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.08vw;
+  box-sizing: border-box;
+}
+
+.generateMoreButton {
+  background-color: #2ae881;
+  color: #201b10;
+  width: 22.8vw;
+}
+
+.generateMoreButton:hover {
+  background-color: #2ae881cc;
+}
+
+.clearAllButton {
+  background-color: #201b10;
+  color: #fff;
+  width: 14.4vw;
+}
+
+.title {
+  font-size: 1.56vw;
+  margin-bottom: 1.04vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

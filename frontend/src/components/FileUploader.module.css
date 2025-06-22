@@ -1,0 +1,200 @@
+.uploadArea {
+  width: 95.83vw;
+  height: 12.45vw;
+  background-color: #eacdff;
+  border-radius: 2.08vw;
+  padding: 2.08vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.04vw;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.uploadArea.dragging {
+  background-color: #d4fae6;
+  border-color: #2ae881;
+}
+
+.uploadArea.error {
+  border-color: #FF5F00;
+  background-color: #FCE2FF;
+}
+
+.uploadArea.success {
+  border-color: #201B10;
+  background-color: #FCE2FF;
+}
+
+.uploadButton {
+  width: 18.8vw;
+  height: 3.65vw;
+  background-color: #fff;
+  color: #201B10;
+  font-size: 1.82vw;
+  font-weight: 500;
+  border-radius: 0.52vw;
+  border: none;
+  cursor: pointer;
+}
+
+.orText {
+  font-size: 1.82vw;
+  color: #201B10;
+}
+
+.fileContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.52vw;
+}
+
+.fileRow {
+  display: flex;
+  align-items: center;
+  gap: 1.04vw;
+  width: 100%;
+  justify-content: center;
+}
+
+.fileName {
+  width: 18.8vw;
+  padding: 0.78vw 1.4vw;
+  border-radius: 0.52vw;
+  font-size: 1.82vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  text-align: left;
+}
+.loader{
+  text-align: center;
+  width: 18.8vw;
+  padding: 0.78vw 1.4vw;
+  border-radius: 0.52vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  background-color: #CB81FF;
+}
+
+.fileName.valid {
+  background-color: #CB81FF;
+  color: #201B10;
+}
+
+.fileName.invalid {
+  background-color: #FF5F00;
+  color: white;
+}
+
+.removeButton {
+  color: #FFFFFF;
+  width: 3.65vw;
+  height: 3.65vw;
+  min-width: 25px;
+  min-height: 25px;
+  background-color: #201B10;
+  border: none;
+  border-radius: 0.52vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  font-size: 1.82vw;
+}
+
+.removeButton:hover {
+  opacity: 0.8;
+}
+
+
+.processingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.04vw;
+}
+
+.processingContainer svg {
+  width: 6vw;
+  height: 6vw;
+}
+
+.processingText {
+  font-size: 1.82vw;
+  color: #201B10;
+  font-weight: 500;
+}
+
+.validationStatus {
+  width: 100%;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #FF5F00;
+  font-size: 1.56vw;
+}
+
+.successMessage {
+  font-size: 1.56vw;
+}
+
+.processingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.04vw;
+  text-align: center;
+  padding: 2.08vw 0;
+}
+
+.processingText {
+  font-size: 1.82vw;
+  color: #201B10;
+  font-weight: 500;
+}
+.fileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 96vw;
+  padding: 0.78vw 1.4vw;
+  border-radius: 0.52vw;
+  font-size: 1.82vw;
+  font-weight: 500;
+  color: #201B10;
+}
+
+.fileName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.fileName.valid {
+  background-color: #CB81FF;
+  color: #201B10;
+}
+
+.fileName.invalid {
+  background-color: #FF5F00;
+  color: white;
+}
+
+
+

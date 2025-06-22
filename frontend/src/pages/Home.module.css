@@ -1,0 +1,179 @@
+.homeContainer {
+  background-color: #FCE2FF;
+  min-height: 100vh;
+  padding: 2.08vw;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.56vw;
+  color: #201B10;
+  text-align: center;
+  margin-bottom: 2.08vw;
+  width: 95.83vw;
+}
+
+.statusMessages {
+  min-height: 2.6vw;
+  margin: 1.04vw 0;
+  text-align: center;
+  width: 100%;
+}
+
+.errorMessage {
+  color: #FF5F00;
+  font-size: 1.56vw;
+  font-weight: 500;
+}
+
+.loadingMessage {
+  color: #201B10;
+  font-size: 1.56vw;
+  font-weight: 500;
+  margin-top: 1vw;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  width: 2.6vw;
+  height: 2.6vw;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.result-table {
+  margin-top: 2.08vw;
+  width: 100%;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.parsingStatus {
+  margin-top: 1.04vw;
+  font-size: 1.82vw;
+  color: #201B10;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
+
+.completedMessage {
+  margin-top: 1.04vw;
+  font-size: 1.56vw;
+  color: #2ae881;
+  font-weight: 500;
+}
+
+.removeButton {
+  font-size: 1.82vw;
+  background-color: transparent;
+  border: none;
+  color: #FF5F00;
+  cursor: pointer;
+  font-weight: bold;
+}
+.sendButtonWrapper {
+  margin-top: 2.08vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sendButton {
+  width: 12.03vw;
+  height: 4.17vw;
+  background-color: #C0C0C0;
+  color: #787878;
+  font-size: 1.82vw;
+  font-weight: 500;
+  border-radius: 1.30vw;
+  border: none;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendButton.active {
+  background-color: #2ae881;
+  color: #201B10;
+  cursor: pointer;
+}
+
+.sendButton.completed {
+  background-color: #D4FAE6;
+  color: #201B10;
+  cursor: default;
+}
+
+.sendButton.active:hover {
+  background-color: #20c570;
+}
+
+.buttonLoader svg {
+  width: 2.6vw;
+  height: 2.6vw;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.completedStatus {
+  margin-top: 1.04vw;
+  font-size: 1.56vw;
+  color: #2ae881;
+  font-weight: 500;
+}
+
+.processingText {
+  font-size: 1.56vw;
+  color: #201B10;
+  font-weight: 500;
+  margin-top: 1.04vw;
+}
+
+.resultsSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlightsPlaceholder {
+  color: #CB81FF;
+  font-weight: 400;
+  font-size: 2.08vw;
+  margin-top: 9vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.placeholderLine {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.loadingIndicator {
+  font-size: 1.56vw;
+  color: #201B10;
+  margin-top: 9vw;
+}

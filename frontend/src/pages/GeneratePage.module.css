@@ -1,0 +1,93 @@
+.generateContainer {
+  max-width: 43.16vw;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.56vw;
+  margin-bottom: 1.04vw;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.04vw;
+  flex-direction: row;
+}
+
+.sendButton {
+  width: 18.8vw;
+  height: 4.17vw;
+  font-size: 1.82vw;
+  font-weight: 500;
+  border-radius: 1.3vw;
+  border: none;
+  transition: all 0.3s ease;
+  background-color: #2ae881;
+  color: #201B10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.52vw;
+}
+
+.sendButton.done {
+  background-color: #D4FAE6;
+  color: #201B10;
+  width: 7.5vw;
+  border-radius: 0.52vw;
+}
+
+.sendButton.loading {
+  background-color: #CB81FF;
+  color: #201B10;
+  width: 20.94vw;
+}
+
+.sendButton.error {
+  background-color: #FF5F00;
+  color: white;
+  width: 9.58vw;
+  border-radius: 0.52vw;
+}
+
+.removeButton {
+  width: 3.65vw;
+  height: 3.65vw;
+  min-width: 3.65vw;
+  min-height: 3.65vw;
+  background-color: #201B10;
+  border: none;
+  border-radius: 0.52vw;
+  color: white;
+  font-size: 1.82vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.removeButton:hover {
+  opacity: 0.8;
+}
+
+.process,
+.errorMessage,
+.generatedMessage {
+  font-size: 1.82vw;
+  margin-top: 1.04vw;
+  animation: fadeIn 0.5s ease;
+}
+
+.errorMessage {
+  color: #FF5F00;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,105 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.52vw 1.04vw;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 13.95vw;
+  min-width: 120px;
+  max-width: 250px;
+  aspect-ratio: 268 / 59;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+.title {
+  background-color: #cb81ff;
+  color: #201B10;
+  font-size: clamp(16px, 1.5625vw, 30px);
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 27.28vw;
+  height: 1.986vw; 
+  min-height: 25px;
+  max-height: 38px;
+  padding: 0.3vw 0.5vw; 
+  margin-left: 2.083vw;
+}
+
+
+.nav {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  padding-right: 2.083vw;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5vw; 
+  min-height: 50px;
+  max-height: 70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0 1vw;
+  border-radius: 0.6vw;
+  flex: 1;
+  min-width: 120px;
+  margin-right: 1.042vw;
+}
+
+.nav-icon {
+  width: auto;
+  height: clamp(28px, 2.2vw, 42px); 
+  object-fit: contain;
+  display: block;
+  transition: all 0.3s ease;
+}
+.nav-link:nth-child(1) { 
+  width: 14.115vw;
+  min-width: 120px;
+}
+
+.nav-link:nth-child(2) { 
+  width: 14.74vw;
+  min-width: 130px;
+}
+
+.nav-link:nth-child(3) { 
+  width: 9.896vw; 
+  min-width: 90px;
+}
+
+.nav-link:hover .nav-icon {
+  transform: scale(1.05);
+  opacity: 0.9;
+  margin-left: 1.042vw
+}

@@ -1,0 +1,103 @@
+.item {
+  display: flex;
+  align-items: center;
+  width: 89.2vw; 
+  height: 8.52vh; 
+  background-color: #f5f5f5;
+  border-radius: 2.08vw;
+  padding: 0 1.56vw;
+  margin-bottom: 1.04vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+}
+
+.item.success {
+  background-color: #cb81ff;
+
+}
+
+.item.error {
+  background-color: #cb81ff;
+  pointer-events: none;
+}
+
+.rowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 6vw;
+  min-width: 0;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #201b10;
+  font-size: 1.56vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 25vw;
+}
+
+.date {
+  font-size: 1.2vw;
+  color: #201B10;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 3.12vw;
+  flex-shrink: 0;
+}
+
+.statusIcon {
+  width: 18vw;    
+  height: 5.56vh;  
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.deleteWrapper {
+  position: absolute;
+  right: -4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.deleteButton {
+  width: auto;
+  height: 8.52vh;
+  min-width: 3.65vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deleteIcon {
+  width: 3vw;
+  height: 8.52vh;
+  object-fit: contain;
+}
+
+.icon {
+    width: 2.08vw;
+    margin-right: -11vw;
+}

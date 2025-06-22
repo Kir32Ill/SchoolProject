@@ -19,7 +19,7 @@ export const generateReport = (params) => {
   });
 
   let isHeadersWritten = false;
-  const targetSize = targetSizeGb * 1024 * 1024 * 1024;
+  const targetSize = targetSizeGb * 1024 * 1024 * 50;
   let currentSize = 0;
 
   const stream = new ReadableStream({

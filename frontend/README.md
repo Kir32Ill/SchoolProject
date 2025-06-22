@@ -1,54 +1,185 @@
-# React + TypeScript + Vite
+# Сервис межгалактической аналитики
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+Фронтенд-приложение для работы с аналитикой CSV-файлов. Поддерживает загрузку файлов, генерацию тестовых данных и просмотр истории.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Технологии
 
-## Expanding the ESLint configuration
+- **TypeScript** (или JavaScript)
+- **React**
+- **Vite** — сборка
+- **CSS Modules** — стили
+- **Zustand** — state-менеджер
+- **react-router-dom** — роутинг
+- **Fetch API** — работа с бэкендом
+- **React Portals** — модальные окна
+- **LocalStorage** — хранение истории
+- **ESLint + Prettier** — линтинг и форматирование кода
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Структура проекта
+
+```
+src/
+├── components/         # Переиспользуемые компоненты UI
+│   ├── FileUploader.tsx
+│   ├── GenerateButton.tsx
+│   ├── Header.tsx
+│   ├── HistoryItem.tsx
+│   ├── HistoryList.tsx
+│   ├── HistoryModal.tsx
+│   ├── Loader.tsx
+│   ├── NavItem.tsx
+│   └── ResultTable.tsx
+│
+├── pages/              # Страницы приложения
+│   ├── Home.tsx        # Главная страница (загрузка файла)
+│   ├── GeneratePage.tsx  # Страница генерации тестовых данных
+│   └── History.tsx     # История загрузок
+│
+├── store/              # Zustand стор
+│   └── useHistoryStore.ts
+│
+├── types/              # Типизация
+│   ├── analyticsData.ts
+│   └── history.ts
+│
+├── services/           # Работа с API
+│   └── api.ts
+│
+├── utils/              # Вспомогательные функции
+│   └── dateUtils.ts
+│
+├── App.tsx             # Корневой компонент
+├── main.tsx            # Точка входа
+└── router.tsx          # Роутинг
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+##  Как запустить проект
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. **Клонируй репозиторий:**
+
+```bash
+git clone https://github.com/Kir32Ill/SchoolProject.git
+cd frontend
 ```
+
+2. **Установи зависимости:**
+
+```bash
+npm install
+```
+
+3. **Запусти локальный сервер:**
+
+```bash
+npm run dev
+```
+
+4. **Открой в браузере:**
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧩 Функционал
+
+### 1. **Главная страница (`Home`)**
+- Загрузка CSV-файла через drag&drop или кнопку
+- Проверка формата файла
+- Отправка на обработку
+- Индикатор прогресса
+- Кнопка "Сброс" — очищает состояние и удаляет файл
+- Парсинг данных из файла с динамическим отображением значений
+
+### 2. **Страница генерации (`GeneratePage`)**
+- При клике на "Начать генерацию":
+  - Отправка запроса к `/report`
+  - Автоматическая загрузка файла
+  - Поддержка обработки ошибок
+
+### 3. **История (`History`)**
+- Данные подтягиваются из `localStorage`
+- Элементы истории:
+  - Название файла
+  - Дата загрузки
+  - Статус (успешно / ошибка)
+- При нажатии на элемент:
+  - Открытие модального окна
+  - Отображение результатов анализа
+- Полная очистка истории
+- Удаление отдельных записей
+
+### 4. **Модальное окно**
+- Реализовано через React Portal
+- Показывает данные анализа или сообщение об ошибке
+- Кнопка закрытия в правом верхнем углу
+
+### 5. **Навигационное меню**
+- Переключение между разделами:
+  - Анализ
+  - Генерация
+  - История
+
+---
+
+## 🔒 Хранение данных
+
+- История загрузок хранится в `localStorage` в виде массива объектов:
+  ```ts
+  {
+    id: string;
+    fileName: string;
+    timestamp: number;
+    success: boolean;
+    error?: string;
+    data?: AnalyticsData;
+  }
+  ```
+
+---
+
+## 🌐 Роутинг
+
+Реализован через `react-router-dom`:
+- `/` — главная
+- `/generate` — генерация тестового файла
+- `/history` — история загрузок
+
+---
+
+## 🎨 Стили
+
+- Все размеры в `vw/vh` для адаптивности под разные разрешения экрана 
+- Цветовая палитра соответствует дизайну:
+  - `#CB81FF` — фиолетовые акценты
+  - `#2AE881` — зелёный успех
+  - `#FF5F00` — красная ошибка
+  - `#201B10` — основной текст
+---
+
+## 🧪 Обработка ошибок
+
+- Если файл не прошел обработку:
+  - Сохраняется в историю с `success: false`
+  - Не показывается в модальном окне
+- При генерации:
+  - Обработка ошибок через try/catch
+  - Отображается пользователю
+
+---
+
+## 📋 Адреса эндпоинтов
+
+- `GET /aggregate` — анализ CSV
+- `POST /aggregate` — отправка файла
+- `GET /report` — генерация тестового файла
+
+> Можно изменить в `services/api.ts`
